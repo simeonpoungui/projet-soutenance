@@ -1,0 +1,16 @@
+.notice {
+    /* Propriétés de défilement personnalisées */
+    overflow: auto; /* Activation du défilement */
+    scrollbar-color: #EC1C23 transparent; /* Couleur du curseur de défilement */
+    scrollbar-width: thin; /* Largeur du curseur de défilement */
+}
+
+/* Facultatif : personnalisation de l'apparence du curseur de défilement */
+.notice::-webkit-scrollbar {
+    width: 6px; /* Largeur du curseur de défilement */
+}
+
+.notice::-webkit-scrollbar-thumb {
+    background-color: #EC1C23; /* Couleur du curseur de défilement */
+    border: none; /* Suppression de la bordure du curseur de défilement */
+}

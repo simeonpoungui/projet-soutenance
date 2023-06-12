@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>connexion</title>
+  </head>
+  <body class="bg-light" style="height: 190vh">
+    <div class="connexion">
+      <div
+        class="form position-absolute bg-white top-100 start-50 translate-middle shadow p-3"
+        style="width: 50%"
+      >
+        <div class="logo m-auto mb-4" style="width: 18%">
+          <img src="logo.png" class="w-100" alt="" />
+        </div>
+        <div class="bg-dark">
+          <p class="text-center p-2 text-white">
+            <i
+              style="padding-right: 10px"
+              class="fa-solid fa-graduation-cap"
+            ></i
+            >PORTAIL DE CONNEXION
+          </p>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label
+              for="exampleInputEmail1"
+              class="form-label text-dark"
+              style="font-size: 12px"
+              >Code ou nom de l'établissement</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="ex:CGLA"
+            />
+          </div>
+
+          <label for="" style="font-size: 12px">Année scolaire</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span
+                class="input-group-text bg-white p-2"
+                style="border-radius: 0px; height: 39px"
+                ><i class="fa-solid fa-calendar"></i
+              ></span>
+            </div>
+            <select class="form-select form-control" id="mySelect">
+              <option value=""></option>
+              <option value="option1">2020-2021</option>
+              <option value="option2">2021-2022</option>
+              <option value="option3">2022-2023</option>
+            </select>
+          </div>
+
+          <div class="">
+            <ul class="nav nav-tabs" id="myTabs" role="tablist">
+              <li class="nav-item" style="width: 25%">
+                <a
+                  class="nav-link text-dark active"
+                  id="tab1"
+                  data-toggle="tab"
+                  href="#content1"
+                  role="tab"
+                  aria-controls="content1"
+                  aria-selected="true"
+                  >DOYEN</a
+                >
+              </li>
+              <li class="nav-item" style="width: 25%">
+                <a
+                  class="nav-link text-dark"
+                  id="tab2"
+                  data-toggle="tab"
+                  href="#content2"
+                  role="tab"
+                  aria-controls="content2"
+                  aria-selected="false"
+                  >AGENT</a
+                >
+              </li>
+              <li class="nav-item" style="width: 25%">
+                <a
+                  class="nav-link text-dark"
+                  id="tab4"
+                  data-toggle="tab"
+                  href="#content3"
+                  role="tab"
+                  aria-controls="content3"
+                  aria-selected="false"
+                  >ENSEIGNANT</a
+                >
+              </li>
+              <li class="nav-item" style="width: 25%">
+                <a
+                  class="nav-link text-dark"
+                  id="tab3"
+                  data-toggle="tab"
+                  href="#content4"
+                  role="tab"
+                  aria-controls="content3"
+                  aria-selected="false"
+                  >PARENT/ETUDIANT</a
+                >
+              </li>
+            </ul>
+
+            <div class="tab-content mt-3">
+              <div
+                class="tab-pane fade show active"
+                id="content1"
+                role="tabpanel"
+                aria-labelledby="tab1"
+              >
+                <div class="mb-3">
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label"
+                    style="font-size: 12px"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                  <small class="text-danger" style="font-size: 12px"
+                    >Le mot de passe doit contenir au moins 4 caractères</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="content2"
+                role="tabpanel"
+                aria-labelledby="tab2"
+              >
+                <label for="" style="font-size: 12px">Identifiant</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="fa-solid fa-user"></i
+                  ></span>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label"
+                    style="font-size: 12px"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                  <small class="text-danger" style="font-size: 12px"
+                    >Le mot de passe doit contenir au moins 4 caractères</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="content3"
+                role="tabpanel"
+                aria-labelledby="tab3"
+              >
+                <label for="" style="font-size: 12px">Identifiant</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="fa-solid fa-user"></i
+                  ></span>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label"
+                    style="font-size: 12px"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                  <small class="text-danger" style="font-size: 12px"
+                    >Le mot de passe doit contenir au moins 4 caractères</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="content4"
+                role="tabpanel"
+                aria-labelledby="tab4"
+              >
+                <label for="" style="font-size: 12px">Code Elève</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="fa-solid fa-user"></i
+                  ></span>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="exampleInputPassword1"
+                    class="form-label"
+                    style="font-size: 12px"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                  <small class="text-danger" style="font-size: 12px"
+                    >Le mot de passe doit contenir au moins 4 caractères</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn form-control text-white p-2"
+            style="background-color: rgb(68, 182, 132)"
+          >
+            Se connecter
+          </button>
+          <button
+            type="submit"
+            class="btn form-control text-dark mt-3 p-2"
+            style="background-color: rgb(254, 226, 148); font-weight: bold"
+          >
+            <i class="fa-solid fa-user"></i> PREINSCRIRE UN ETUDIANT
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

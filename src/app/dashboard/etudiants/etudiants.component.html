@@ -1,0 +1,101 @@
+<div class="">
+</div>
+<div class="px-2">
+  <h1 class="card-title text-center">Liste des agents</h1>
+
+  <div>
+  </div>
+  <div class="mat-elevation-z8">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="table-striped"
+    >
+      <!-- Position Column -->
+
+      <ng-container matColumnDef="nom_etudiant" >
+        <th mat-header-cell *matHeaderCellDef >nom_etudiant</th>
+        <td mat-cell *matCellDef="let element" >{{ element.nom_etudiant }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="prenom_etudiant" >
+        <th mat-header-cell *matHeaderCellDef >prenom_etudiant</th>
+        <td mat-cell *matCellDef="let element" >{{ element.prenom_etudiant }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="niveau" >
+        <th mat-header-cell *matHeaderCellDef >niveau</th>
+        <td mat-cell *matCellDef="let element" >{{ element.niveau }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="genre" >
+        <th mat-header-cell *matHeaderCellDef >genre</th>
+        <td mat-cell *matCellDef="let element" >{{ element.genre }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="options" >
+        <th mat-header-cell *matHeaderCellDef >options</th>
+        <td mat-cell *matCellDef="let element" >{{ element.options }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="adresse" >
+        <th mat-header-cell *matHeaderCellDef >adresse</th>
+        <td mat-cell *matCellDef="let element" >{{ element.adresse }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="telephone" >
+        <th mat-header-cell *matHeaderCellDef >telephone</th>
+        <td mat-cell *matCellDef="let element" >{{ element.telephone }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell class="text-end" style="padding-right: 65px;" *matHeaderCellDef>Actions</th>
+
+        <td mat-cell class="text-end" style="padding-right: 50px;" *matCellDef="let element">
+          <button
+            type="button"
+           
+            class="btn text-lowercase py-0 px-1"
+          >
+            <i class="fa fa-eye text-black" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+  
+            class="btn text-lowercase py-0 px-1"
+          >
+            <i class="fa fa-pencil text-black" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="btn text-lowercase px-1 py-0"
+          
+          >
+            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[11, 20, 30]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+      class="par-page bg-info"
+    >
+    </mat-paginator>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="fa-3x text-center mb-4 mt-4">
+    <label class="fs-3">chargement des nationalités</label><br /><br />
+    <i class="fas text-primary spinner-grow"></i><br />
+  </div>
+</ng-template>

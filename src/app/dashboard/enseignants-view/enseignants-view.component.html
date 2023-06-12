@@ -1,0 +1,141 @@
+<div class="contaiter  shadow">
+
+  <div class="d-flex shadow mb-4 bg-white justify-content-between">
+    <div class="">
+      <li class="nav-item ">
+        <a class="nav-link text-primary fs-5 pt-4" style="cursor: pointer;" (click)="_location.back()"><i class="fa-solid fa-arrow-left"></i> Retour </a>
+    </li>
+    </div>
+    <div class="">
+      <p class="p-3 card-title text-center ">Liste des enseignants</p>
+
+    </div>
+    <div class="">
+      <p class="p-3 fs-5">umng</p>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-4 ">
+        <label for="" class="text-center mx-1">Recherche</label>
+        <div class="d-flex align-items-center">
+
+          <i style="position: absolute" class="fa-solid fs-4 p-3 text-primary fa-magnifying-glass"></i>
+          <input
+            type="text"
+            (keyup)="applyFilter($event)"
+            placeholder="Recherchez un etudiant par ici..."
+            class="form-control shadow  text-start px-5 text-uppercase"
+          />
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <button
+          class="form-control bg-danger  col-lg-4 mt-4  text-white"
+          style="cursor: pointer;"
+         
+        >
+          Generer une déclaration de recette
+        </button>
+      </div>
+
+      <div class="col-lg-4">
+        <button
+          class="form-control col-lg-4 mt-4 text-white"
+          style="cursor: pointer; background-color: #9c71fb;"
+         routerLink="/enseignant/ajout"
+        >
+          Ajouter un enseignant <i class="fa-solid fa-user-plus " style="margin-left: 10px;"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mat-elevation-z8 mt-4">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="table-striped"
+      >
+        <!-- Position Column -->
+  
+        <ng-container matColumnDef="nom_enseignant" >
+          <th mat-header-cell *matHeaderCellDef >nom</th>
+          <td mat-cell *matCellDef="let element" >{{ element.nom_enseignant }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="prenom_enseignant" >
+          <th mat-header-cell *matHeaderCellDef >prenom</th>
+          <td mat-cell *matCellDef="let element" >{{ element.prenom_enseignant }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="telephone" >
+          <th mat-header-cell *matHeaderCellDef >telephone</th>
+          <td mat-cell *matCellDef="let element" >{{ element.telephone }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="civilite" >
+          <th mat-header-cell *matHeaderCellDef >civilite </th>
+          <td mat-cell *matCellDef="let element" >{{ element.civilite }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="matieres_enseigne" >
+          <th mat-header-cell *matHeaderCellDef >matières </th>
+          <td mat-cell *matCellDef="let element" >{{ element.matieres_enseigne }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="etablissement" >
+          <th mat-header-cell *matHeaderCellDef >etablissement</th>
+          <td mat-cell *matCellDef="let element" >{{ element.etablissement }}</td>
+        </ng-container>
+
+  
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell class="text-end " style="padding-right: 30px;"  *matHeaderCellDef>Actions</th>
+  
+          <td mat-cell class="text-end" *matCellDef="let element">
+            <button
+              type="button"
+              (click)="view(element)"
+              class="btn text-lowercase py-0 px-1"
+            >
+              <i class="fa fa-eye text-info" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              (click)="edit(element)"
+              class="btn text-lowercase py-0 px-1"
+            >
+              <i class="fa fa-pencil text-primary" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="btn text-lowercase px-1 py-0"
+              (click)="delete(element)"
+             
+            >
+              <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+  
+      <mat-paginator
+        [pageSizeOptions]="[11, 20, 30]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+        class="par-page bg-info"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="fa-3x text-center mb-4 mt-4">
+      <label class="fs-3">chargement des nationalités</label><br /><br />
+      <i class="fas text-primary spinner-grow"></i><br />
+    </div>
+  </ng-template>
+  

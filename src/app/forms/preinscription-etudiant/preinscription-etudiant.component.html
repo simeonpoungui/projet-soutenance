@@ -1,0 +1,322 @@
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title text-left text-upercase">
+          <h2>
+            {{ action === "view" ? "Fiche d'inscription de l'etudiant" : "" }}
+            {{ action === "edit" ? "Modification l'etudiant" : "" }}
+            {{ action === "view" || action === "edit" ? nom_etudiant : "" }}
+            {{ !action ? "Préinscription Etudiant" : "" }}
+          </h2>
+        </h3>
+        <form
+          #produitForm="ngForm"
+          (ngSubmit)="onSubmitForm(produitForm)"
+          class="g-3 needs-validation"
+        >
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+
+          </div>
+          <div class="col-lg-6 ">
+
+            <div class="">
+              <label for="validationCustom01" class="form-label">nom</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="nom_etudiant"
+                [(ngModel)]="nom_etudiant"
+                required=""
+              />
+            </div>
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">prénom</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="prenom_etudiant"
+                [(ngModel)]="prenom_etudiant"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">genre</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="genre"
+                [(ngModel)]="genre"
+                required=""
+              />
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-6">
+            <div class="">
+              <label for="validationCustom01" class="form-label">telephone</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="telephone"
+                [(ngModel)]="telephone"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">date de naissance</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="date_naissance"
+                [(ngModel)]="date_naissance"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">parcours</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="parcours"
+                [(ngModel)]="parcours"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 ">
+
+            <div class="">
+              <label for="validationCustom01" class="form-label">niveau</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="niveau"
+                [(ngModel)]="niveau"
+                required=""
+              />
+            </div>
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">email</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="email"
+                [(ngModel)]="email"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">etablissement</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="etablissement"
+                [(ngModel)]="etablissement"
+                required=""
+              />
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="row mt-4">
+          <div class="col-lg-6">
+            <div class="">
+              <label for="validationCustom01" class="form-label">adresse</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="adresse"
+                [(ngModel)]="adresse"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">residence</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="residence"
+                [(ngModel)]="residence"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">departement</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="departement"
+                [(ngModel)]="departement"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 ">
+
+            <div class="">
+              <label for="validationCustom01" class="form-label">quittance</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="quittance"
+                [(ngModel)]="quittance"
+                required=""
+              />
+            </div>
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">cycle</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="cycle"
+                [(ngModel)]="cycle"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">CNI</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="CNI"
+                [(ngModel)]="CNI"
+                required=""
+              />
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="row mt-4">
+          <div class="col-lg-6">
+            <div class="">
+              <label for="validationCustom01" class="form-label">bac</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="bac"
+                [(ngModel)]="bac"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">session</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="session"
+                [(ngModel)]="session"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">mension</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="mension"
+                [(ngModel)]="mension"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 ">
+
+            <div class="">
+              <label for="validationCustom01" class="form-label">lycee</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="lycee"
+                [(ngModel)]="lycee"
+                required=""
+              />
+            </div>
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">pays</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="pays"
+                [(ngModel)]="pays"
+                required=""
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="validationCustom01" class="form-label">serie</label>
+              <input
+                [readonly]="action == 'view'"
+                type="text"
+                class="form-control"
+                name="serie"
+                [(ngModel)]="serie"
+                required=""
+              />
+            </div>
+
+          </div>
+
+        </div>
+
+          
+          
+          <div class="col-12 mt-5" *ngIf="action !== 'view'">
+            <button
+              type="submit"
+             
+              class="btn bg-primary form-control text-white btn-primary"
+            >
+              {{ action === "edit" ? "Modifier" : "Enregistré"}}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
