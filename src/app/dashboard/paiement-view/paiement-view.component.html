@@ -1,196 +1,468 @@
 
-<div class="contaiter shadow ">
-  <div class="d-flex shadow mb-4 bg-white justify-content-between">
-    <div class="">
-      <li class="nav-item ">
-        <a class="nav-link text-primary fs-5 pt-4" style="cursor: pointer;" (click)="_location.back()"><i class="fa-solid fa-arrow-left"></i> Retour </a>
-    </li>
-    </div>
-    <div class="">
-      <p class="p-3 card-title text-center ">Liste des Paiements</p>
 
-    </div>
-    <div class="">
-      <p class="p-3 fs-5">umng</p>
-    </div>
-  </div>
-    <div class="row">
-      <div class="col-lg-4 ">
-        <label for="" class="text-center mx-1">Recherche</label>
-        <div class="d-flex align-items-center">
+<body>
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
+      experience.
+    </p>
+  <![endif]-->
 
-          <i style="position: absolute" class="fa-solid fs-4 p-3 text-primary fa-magnifying-glass"></i>
-          <input
-            type="text"
-            (keyup)="applyFilter($event)"
-            placeholder="Recherchez un etudiant par ici..."
-            class="form-control shadow  text-start px-5 text-uppercase"
-          />
+  <!-- Header Area Start -->
+  <header class="top">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-8">
+            <div class="header-top-left">
+              <p>VOUS AVEZ DES QUESTIONS ? +880 5698 598 6587</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="header-top-right text-md-end text-center">
+              <ul>
+                <li><a routerLink="/connexion">preinscription</a></li>
+                <li><a routerLink="/inscrire">inscription</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-lg-4">
-        <button
-          class="form-control bg-danger  col-lg-4 mt-4  text-white"
-          style="cursor: pointer;"
-         
-        >
-          Generer une attestation de préinscription
-        </button>
-      </div>
-
-      <div class="col-lg-4">
-        <button
-          class="form-control col-lg-4 mt-4 text-white"
-          style="cursor: pointer; background-color: #9c71fb;"
-         routerLink="/paiement/ajout"
-        >
-          Ajouter un paiement <i class="fa-solid fa-user-plus " style="margin-left: 10px;"></i>
-        </button>
+    </div>
+    <div class="header-area two header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-5 col-6">
+            <div class="logo d-flex">
+              <div style="width: 100px">
+                <a href="index.html"
+                  ><img
+                    src="assets/img/umng/logo.png"
+                    style="width: 50%"
+                    alt="eduhome"
+                /></a>
+              </div>
+              <!-- <div style="padding-top: 12px;width: 300px;">
+                              <span class="text-dark fs-6">UMNG ACADEMIC</span>
+                            </div> -->
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-7 col-6">
+            <div class="content-wrapper text-end">
+              <!-- Main Menu Start -->
+              <div class="main-menu">
+                <nav>
+                  <ul>
+                    <li>
+                      <a routerLink="/accueil">Accueil</a>
+                    </li>
+                    <li>
+                      <a routerLink="/about">A propos</a>
+                    </li>
+                    <li>
+                      <a routerLink="/cours">Cours</a>
+                      <ul>
+                        <li><a routerLink="cours">cours</a></li>
+                        <li>
+                          <a routerLink="course-details.html"
+                            >détails des cours</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a routerLink="/evenements">Evénement</a>
+                      <ul>
+                        <li><a routerLink="event">Evénements</a></li>
+                        <li>
+                          <a routerLink="event-details.html"
+                            >Détails des évènements</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="hidden-sm">
+                      <a routerLink="/teachers">Enseignants</a>
+                      <ul>
+                        <li><a routerLink="/teachers">enseignants</a></li>
+                        <li>
+                          <a routerLink="teacher-details.html"
+                            >détails des enseignants</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a routerLink="/blogs">Blog</a>
+                      <ul>
+                        <li><a routerLink="/blogs">Blog</a></li>
+                        <li>
+                          <a routerLink="blog-details.html">Détails du blog</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a routerLink="/contacts">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!--Search Form Start-->
+              <div class="search-btn">
+                <ul class="header-search search-toggle">
+                  <li class="search-menu">
+                    <i class="fa fa-search"></i>
+                  </li>
+                </ul>
+                <div class="search">
+                  <div class="search-form">
+                    <form id="search-form" action="#">
+                      <input
+                        type="search"
+                        placeholder="Search here..."
+                        name="search"
+                      />
+                      <button type="submit">
+                        <span><i class="fa fa-search"></i></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!--End of Search Form-->
+              <!-- Main Menu End -->
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mobile-menu hidden-sm"></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="row">
-
-      <div class="col-lg-4">
-        <button
-          class="form-control   col-lg-4 mt-4  text-white"
-          style="cursor: pointer; background-color: #9c71fb;"
-         
-        >
-          Generer une déclaration de recette
-        </button>
+  </header>
+  <!-- Header Area End -->
+  <!-- Banner Area Start -->
+  <div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="banner-content-wrapper">
+              <div class="banner-content">
+                <h2>Tableau de bord</h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-4">
-        <button
-          class="form-control bg-danger  col-lg-4 mt-4  text-white"
-          style="cursor: pointer;"
-         
-        >
-          Generer une attestation d'inscription
-        </button>
-      </div>
-
-      <div class="col-lg-4">
-        <button
-          class="form-control  col-lg-4 mt-4  text-white"
-          style="cursor: pointer; background-color: #9c71fb;"
-          (click)="imprimer()"
-        >
-          Imprimer la liste des paiements <i class="fa-solid fa-print"></i>
-        </button>
-      </div>
-
     </div>
-  <div>
   </div>
-  <div class="mat-elevation-z8 mt-4">
-    <table
-      mat-table
-      [dataSource]="dataSource"
-      class="table-striped"
-    >
-      <!-- Position Column -->
+  <!-- Banner Area End -->
+  <!-- Blog Start -->
+  <div class="blog-area pt-100 pb-100">
+    <div class="container">
+      <div class="mb-2">
+        <li class="nav-item ">
+          <a class="nav-link fs-5 pt-4" style="cursor: pointer; color: #2c2b5e;" (click)="_location.back()"><i class="fa-solid fa-arrow-left"></i> Retour </a>
+      </li>
+      </div>
+
+      <div class=" shadow mb-4 bg-white">
   
-      <ng-container matColumnDef="nom" >
-        <th mat-header-cell *matHeaderCellDef >nom</th>
-        <td mat-cell *matCellDef="let element" >{{ element.nom }}</td>
-      </ng-container>
+        <div class="">
+          <p class="p-3 card-title text-center fs-4 fw-bold">Liste des paiements</p>
+    
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-lg-4 ">
+            <label for="" class="text-center mx-1">Recherche</label>
+            <div class="d-flex align-items-center">
+    
+              <i style="position: absolute;color: #2c2b5e;" class="fa-solid fs-4 p-3  fa-magnifying-glass"></i>
+              <input
+                type="text"
+                (keyup)="applyFilter($event)"
+                placeholder="Recherchez par ici..."
+                class="form-control shadow  text-start px-5 text-uppercase"
+              />
+            </div>
+          </div>
   
-      <ng-container matColumnDef="prenom" >
-        <th mat-header-cell *matHeaderCellDef >prenom</th>
-        <td mat-cell *matCellDef="let element" >{{ element.prenom }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="email" >
-        <th mat-header-cell *matHeaderCellDef >email</th>
-        <td mat-cell *matCellDef="let element" >{{ element.email }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="options" >
-        <th mat-header-cell *matHeaderCellDef >options</th>
-        <td mat-cell *matCellDef="let element" >{{ element.options }}</td>
-      </ng-container>
-  
-  
-      <ng-container matColumnDef="domaine" >
-        <th mat-header-cell *matHeaderCellDef >domaine</th>
-        <td mat-cell *matCellDef="let element" >{{ element.domaine }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="cycle" >
-        <th mat-header-cell *matHeaderCellDef >cycle</th>
-        <td mat-cell *matCellDef="let element" >{{ element.cycle }}</td>
-      </ng-container>
-  
-  
-      <ng-container matColumnDef="montant" >
-        <th mat-header-cell *matHeaderCellDef >montant</th>
-        <td mat-cell *matCellDef="let element" >{{ element.montant }}</td>
-      </ng-container>
-  
-  
-           <ng-container matColumnDef="Actions">
-          <th mat-header-cell class="text-end " style="padding-right: 30px;"  *matHeaderCellDef>Actions</th>
-  
-          <td mat-cell class="text-end" *matCellDef="let element">
+          <div class="col-lg-4">
             <button
-              type="button"
-              (click)="view(element)"
-              class="btn text-lowercase py-0 px-1"
+              class="form-control  col-lg-4 mt-4  text-white"
+              style="cursor: pointer; background-color:#2c2b5e;"
+              (click)="imprimer()"
             >
-              <i class="fa fa-eye text-info" aria-hidden="true"></i>
+              Imprimer la liste des paiements<i class="fa-solid fa-print" style="padding-left: 10px;"></i>
             </button>
+          </div>
+          <div class="col-lg-4">
             <button
-              type="button"
-              (click)="edit(element)"
-              class="btn text-lowercase py-0 px-1"
+              class="form-control col-lg-4 mt-4 text-white"
+              style="cursor: pointer; background-color:#2c2b5e;"
+              routerLink="/paiement/ajout"
             >
-              <i class="fa fa-pencil text-primary" aria-hidden="true"></i>
+              Ajouter un paiement <i class="fa-solid fa-user-plus " style="margin-left: 10px;"></i>
             </button>
-            <button
-              type="button"
-              class="btn text-lowercase px-1 py-0"
-              (click)="delete(element)"
-             
-            >
-              <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-            </button>
-          </td>
-        </ng-container>
+          </div>
+        </div>
   
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+        <div class="mat-elevation-z8 mt-4">
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            class="table-striped"
+          >
+            <!-- Position Column -->
+      
+            <ng-container matColumnDef="nom" >
+              <th mat-header-cell *matHeaderCellDef >nom</th>
+              <td mat-cell *matCellDef="let element" >{{ element.nom }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="prenom" >
+              <th mat-header-cell *matHeaderCellDef >prenom</th>
+              <td mat-cell *matCellDef="let element" >{{ element.prenom }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="email" >
+              <th mat-header-cell *matHeaderCellDef >email</th>
+              <td mat-cell *matCellDef="let element" >{{ element.email }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="options" >
+              <th mat-header-cell *matHeaderCellDef >options </th>
+              <td mat-cell *matCellDef="let element" >{{ element.options }}</td>
+            </ng-container> 
+    
+    
+            <ng-container matColumnDef="domaine" >
+              <th mat-header-cell *matHeaderCellDef >domaine </th>
+              <td mat-cell *matCellDef="let element" >{{ element.domaine }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="cycle" >
+              <th mat-header-cell *matHeaderCellDef >cycle</th>
+              <td mat-cell *matCellDef="let element" >{{ element.cycle }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="montant" >
+              <th mat-header-cell *matHeaderCellDef >montant</th>
+              <td mat-cell *matCellDef="let element" >{{ element.montant }}</td>
+            </ng-container>
   
-    <mat-paginator
-      [pageSizeOptions]="[11, 20, 30]"
-      showFirstLastButtons
-      aria-label="Select page of periodic elements"
-      class="par-page bg-info"
-    >
-    </mat-paginator>
+    
+      
+            <ng-container matColumnDef="Actions">
+              <th mat-header-cell class="text-end " style="padding-right: 30px;"  *matHeaderCellDef>Actions</th>
+      
+              <td mat-cell class="text-end" *matCellDef="let element">
+                <button
+                  type="button"
+                  (click)="view(element)"
+                  class="btn text-lowercase py-0 px-1"
+                >
+                  <i class="fa fa-eye text-primary" aria-hidden="true"></i>
+                </button>
+                <button
+                  type="button"
+                  (click)="edit(element)"
+                  class="btn text-lowercase py-0 px-1"
+                >
+                  <i class="fa fa-pencil text-primary" aria-hidden="true"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn text-lowercase px-1 py-0"
+                 
+                >
+                  <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                </button>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+      
+          <mat-paginator
+            [pageSizeOptions]="[11, 20, 30]"
+            showFirstLastButtons
+            aria-label="Select page of periodic elements"
+            class="par-page"
+          >
+          </mat-paginator>
+        </div>
+      </div>
+      
+      <ng-template #loading>
+        <div class="fa-3x text-center mb-4 mt-4">
+          <label class="fs-3">chargement des nationalités</label><br /><br />
+          <i class="fas text-primary spinner-grow"></i><br />
+        </div>
+      </ng-template>
   </div>
-</div>
-
-<ng-template #loading>
-  <div class="fa-3x text-center mb-4 mt-4">
-    <label class="fs-3">chargement des nationalités</label><br /><br />
-    <i class="fas text-primary spinner-grow"></i><br />
+  <!-- Blog End -->
+  <!-- Subscribe Start -->
+  <div class="subscribe-area pt-60 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="subscribe-content section-title text-center">
+            <h2>abonnez-vous à notre newsletter</h2>
+            <p>Abonnez-vous des maintenant</p>
+          </div>
+          <div class="newsletter-form mc_embed_signup">
+            <form
+              action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll" class="mc-form">
+                <input
+                  type="email"
+                  value=""
+                  name="EMAIL"
+                  class="email"
+                  id="mce-EMAIL"
+                  placeholder="Entrez votre adresse email"
+                  required
+                />
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div class="mc-news" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+                <button
+                  id="mc-embedded-subscribe"
+                  class="default-btn"
+                  type="submit"
+                  name="subscribe"
+                >
+                  <span>s'abonner</span>
+                </button>
+              </div>
+            </form>
+            <!-- mailchimp-alerts Start -->
+            <div class="mailchimp-alerts">
+              <div class="mailchimp-submitting"></div>
+              <!-- mailchimp-submitting end -->
+              <div class="mailchimp-success"></div>
+              <!-- mailchimp-success end -->
+              <div class="mailchimp-error"></div>
+              <!-- mailchimp-error end -->
+            </div>
+            <!-- mailchimp-alerts end -->
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</ng-template>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- Subscribe End -->
+  <!-- Footer Start -->
+  <footer class="footer-area">
+    <div class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-widget text-center pr-60">
+              <div class="footer-logo pb-25">
+                <a href="index.html"
+                  ><img
+                    src="assets/img/umng/logo.png"
+                    style="width: 55%"
+                    alt="eduhome"
+                /></a>
+              </div>
+              <div class="footer-social" style="margin-top: -30px !important">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/devitems/?ref=bookmarks"
+                      ><i class="zmdi zmdi-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.pinterest.com/devitemsllc/"
+                      ><i class="zmdi zmdi-pinterest"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="zmdi zmdi-vimeo"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/devitemsllc"
+                      ><i class="zmdi zmdi-twitter"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="single-widget">
+              <h3>information</h3>
+              <ul>
+                <li><a href="#">admission</a></li>
+                <li><a href="#">Calendrier académique</a></li>
+                <li><a href="event.html">Liste des événements</a></li>
+                <li><a href="#">Etablissements</a></li>
+                <li><a href="#">Calendrier</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 pt-4 pt-lg-0">
+            <div class="single-widget">
+              <h3>Liens utiles</h3>
+              <ul>
+                <li><a href="course.html">nos cours</a></li>
+                <li><a href="about.html">à propos de nous</a></li>
+                <li><a href="teacher.html">enseignants &amp; facultés</a></li>
+                <li><a href="#">équipes &amp; conditions</a></li>
+                <li><a href="event.html">nos événements</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 pt-4 pt-lg-0">
+            <div class="single-widget">
+              <h3>entrer en contact</h3>
+              <p>
+                Your address goes here, Street<br />City, Roadno 785 New York
+              </p>
+              <p>+880 548 986 898 87<br />+880 659 785 658 98</p>
+              <p>info@eduhome.com<br />www.eduhome.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              Copyright © <a href="index.html">Eduhome</a> 2022. All Right
+              Reserved By
+              <a
+                href="https://themeforest.net/user/hastech/portfolio"
+                target="_blank"
+                >Hastech.</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+</body>
 
 

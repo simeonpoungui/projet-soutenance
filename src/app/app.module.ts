@@ -6,7 +6,6 @@ import { PrincipalComponent } from './principal/principal.component';
 import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
-import { ConnexionComponent } from './forms/connexion/connexion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +44,7 @@ import { TeacherComponent } from './pages/teacher/teacher.component';
 import { ConnecComponent } from './pages/connec/connec.component';
 import { InscrireComponent } from './pages/inscrire/inscrire.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ConnexionFormComponent } from './connexion-form/connexion-form.component';
 
 
 
@@ -53,7 +53,6 @@ import { AboutComponent } from './pages/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ConnexionComponent,
     HomeComponent,
     PrincipalComponent,
     PageNoFoundComponent,
@@ -79,6 +78,7 @@ import { AboutComponent } from './pages/about/about.component';
     ConnecComponent,
     InscrireComponent,
     AboutComponent,
+    ConnexionFormComponent,
 
 
 

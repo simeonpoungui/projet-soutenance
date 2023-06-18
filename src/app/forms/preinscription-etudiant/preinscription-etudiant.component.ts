@@ -10,7 +10,7 @@ import { InscriptionService } from '../../services/inscription.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { PreinscriptionEtudiant } from 'src/app/models/preinscription.model';
 import { PreinscriptionService } from 'src/app/services/preinscription.service';
-
+declare var $: any;
 
 @Component({
   selector: 'app-preinscription-etudiant',
@@ -19,7 +19,7 @@ import { PreinscriptionService } from 'src/app/services/preinscription.service';
 })
 export class PreinscriptionEtudiantComponent {
 
-  @Input() action !: "create" | "edit" | "view"
+  action!: 'edit' | 'view';
 
   id!: string;
   nom_etudiant!: string;
@@ -35,7 +35,7 @@ export class PreinscriptionEtudiantComponent {
   adresse!: string;
   residence!: string;
   departement!: string;
-  image!: string;
+  image: string ="assets/img/umng/freepik.avif"
   quittance!: string;
   cycle!: string;
   CNI!: string;
@@ -50,6 +50,14 @@ export class PreinscriptionEtudiantComponent {
   isLoading!: boolean;
 
 
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.image = reader.result as string;
+    };
+  }
 
   constructor(
     private router: Router,
@@ -62,11 +70,150 @@ export class PreinscriptionEtudiantComponent {
 
   ngOnInit(): void {
 
-    if (this.id) {
-       this.initForUpdate(this.id)
-    }
-    console.log(this.id);
+    const preinscriptionID = this.route.snapshot.params['preinscriptionID'];
+    this.action = this.route.snapshot.params['action'];
+
+    console.log(preinscriptionID);
     console.log(this.action)
+
+    if (preinscriptionID) {
+      this.initForUpdate(preinscriptionID);
+    }
+
+    $(document).ready(function () {
+
+      var windows = $(window);
+      var stick = $(".header-sticky");
+    windows.on('scroll',function() {    
+      var scroll = windows.scrollTop();
+      if (scroll < 5) {
+        stick.removeClass("sticky");
+      }else{
+        stick.addClass("sticky");
+      }
+    });  
+  /*------------------------------------
+    jQuery MeanMenu 
+  --------------------------------------*/
+    $('.main-menu nav').meanmenu({
+      meanScreenWidth: "767",
+      meanMenuContainer: '.mobile-menu'
+    });
+      
+      
+      /* last  2 li child add class */
+      $('ul.menu>li').slice(-2).addClass('last-elements');
+  /*------------------------------------
+    Owl Carousel
+  --------------------------------------*/
+      $('.slider-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          animateOut: 'fadeOut',
+          animateIn: 'fadeIn',
+          smartSpeed: 2500,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:1
+              },
+              1000:{
+                  items:1
+              }
+          }
+      });
+  
+      $('.partner-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:3
+              },
+              1000:{
+                  items:5
+              }
+          }
+      });  
+  
+      $('.testimonial-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:1
+              },
+              1000:{
+                  items:1
+              }
+          }
+      });
+  /*------------------------------------
+    Video Player
+  --------------------------------------*/
+      $('.video-popup').magnificPopup({
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          zoom: {
+              enabled: true,
+          }
+      });
+      
+      $('.image-popup').magnificPopup({
+          type: 'image',
+          gallery:{
+              enabled:true
+          }
+      }); 
+  /*----------------------------
+      Wow js active
+  ------------------------------ */
+
+  /*------------------------------------
+    Scrollup
+  --------------------------------------*/
+      $.scrollUp({
+          scrollText: '<i class="fa fa-angle-up"></i>',
+          easingType: 'linear',
+          scrollSpeed: 900,
+          animation: 'fade'
+      });
+  /*------------------------------------
+    Nicescroll
+  --------------------------------------*/
+      // $(".notice-left").niceScroll({
+      //     cursorcolor: "#EC1C23",
+      //     cursorborder: "0px solid #fff",
+      //     autohidemode: false,
+      // });
+  
+      /*-----------------------
+          Search Toggle
+      ------------------------- */
+      let searchSelector = document.querySelector('.search-toggle');
+      const searchBox = document.querySelector('.search');
+      
+      if (searchSelector && searchBox) {
+        searchSelector.addEventListener('click', function () {
+          searchBox.classList.toggle('open');
+        });
+      }
+    });
+
+
   }
 
   initForUpdate(preinscriptionID: string) {

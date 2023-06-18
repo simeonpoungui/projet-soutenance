@@ -84,26 +84,16 @@ export class PreinscriptionEtudiantViewComponent {
     this.dataSource.filter = value.trim().toLowerCase();
   }
 
-  create() {
-    const refview = this.dialog.open(PreinscriptionEtudiantComponent, {
-    });
-     refview.componentInstance.action = 'create';
-  }
-
-  edit(preinscription: PreinscriptionEtudiant) {
-    const ref = this.dialog.open(PreinscriptionEtudiantComponent, {
-    });
-     ref.componentInstance.action = 'edit';
-     ref.componentInstance.id = preinscription.id;
+  edit(id: string){
+    this.router.navigateByUrl('/preinscription/edit/' + id);
   }
 
 
-  view(preinscription: PreinscriptionEtudiant) {
-    const refview = this.dialog.open(PreinscriptionEtudiantComponent, {
-    });
-     refview.componentInstance.action = 'view';
-     refview.componentInstance.id = preinscription.id;
+  view(id: string){
+    this.router.navigateByUrl('/preinscription/view/' +  id);
   }
+
+
 
   delete(preinscription:PreinscriptionEtudiant) {
     const ref = this.dialog.open(AlertComponent);

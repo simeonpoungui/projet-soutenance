@@ -12,7 +12,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { EnseignantService } from 'src/app/services/enseignant.service';
 import { EnseignantComponent } from 'src/app/forms/enseignant/enseignant.component';
 import { Enseignant } from 'src/app/models/enseignant.model';
-
+declare var $: any;
 @Component({
   selector: 'app-enseignants-view',
   templateUrl: './enseignants-view.component.html',
@@ -27,7 +27,7 @@ export class EnseignantsViewComponent {
     'prenom_enseignant',
     // 'adresse',
     'telephone',
-    'civilite',
+    // 'civilite',
     // 'nationalite',
     'matieres_enseigne',
     'etablissement',
@@ -45,6 +45,139 @@ export class EnseignantsViewComponent {
 
 
   ngOnInit(): void {
+
+    $(document).ready(function () {
+
+      var windows = $(window);
+      var stick = $(".header-sticky");
+    windows.on('scroll',function() {    
+      var scroll = windows.scrollTop();
+      if (scroll < 5) {
+        stick.removeClass("sticky");
+      }else{
+        stick.addClass("sticky");
+      }
+    });  
+  /*------------------------------------
+    jQuery MeanMenu 
+  --------------------------------------*/
+    $('.main-menu nav').meanmenu({
+      meanScreenWidth: "767",
+      meanMenuContainer: '.mobile-menu'
+    });
+      
+      
+      /* last  2 li child add class */
+      $('ul.menu>li').slice(-2).addClass('last-elements');
+  /*------------------------------------
+    Owl Carousel
+  --------------------------------------*/
+      $('.slider-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          animateOut: 'fadeOut',
+          animateIn: 'fadeIn',
+          smartSpeed: 2500,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:1
+              },
+              1000:{
+                  items:1
+              }
+          }
+      });
+  
+      $('.partner-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:3
+              },
+              1000:{
+                  items:5
+              }
+          }
+      });  
+  
+      $('.testimonial-owl').owlCarousel({
+          loop:true,
+          nav:true,
+          navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+          responsive:{
+              0:{
+                  items:1
+              },
+              768:{
+                  items:1
+              },
+              1000:{
+                  items:1
+              }
+          }
+      });
+  /*------------------------------------
+    Video Player
+  --------------------------------------*/
+      $('.video-popup').magnificPopup({
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          zoom: {
+              enabled: true,
+          }
+      });
+      
+      $('.image-popup').magnificPopup({
+          type: 'image',
+          gallery:{
+              enabled:true
+          }
+      }); 
+  /*----------------------------
+      Wow js active
+  ------------------------------ */
+
+  /*------------------------------------
+    Scrollup
+  --------------------------------------*/
+      $.scrollUp({
+          scrollText: '<i class="fa fa-angle-up"></i>',
+          easingType: 'linear',
+          scrollSpeed: 900,
+          animation: 'fade'
+      });
+  /*------------------------------------
+    Nicescroll
+  --------------------------------------*/
+      // $(".notice-left").niceScroll({
+      //     cursorcolor: "#EC1C23",
+      //     cursorborder: "0px solid #fff",
+      //     autohidemode: false,
+      // });
+  
+      /*-----------------------
+          Search Toggle
+      ------------------------- */
+      let searchSelector = document.querySelector('.search-toggle');
+      const searchBox = document.querySelector('.search');
+      
+      if (searchSelector && searchBox) {
+        searchSelector.addEventListener('click', function () {
+          searchBox.classList.toggle('open');
+        });
+      }
+    });
     
      this.initEnseignant()
   }
@@ -114,6 +247,14 @@ export class EnseignantsViewComponent {
     console.log(Enseignant);
   }
 
-
+  imprimer() {
+    const url = 'http://localhost:8000/impression/liste/enseignant';
+    const newWindow = window.open(url, '_blank');
+    
+    // Vérifier si l'ouverture de la fenêtre a été bloquée par le navigateur
+    if (newWindow === null) {
+      alert('La fenêtre d\'impression a été bloquée par le navigateur. Veuillez autoriser les fenêtres contextuelles pour afficher le fichier PDF.');
+    }
+  }
  
 }

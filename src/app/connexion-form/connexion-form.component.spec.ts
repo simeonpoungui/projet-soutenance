@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConnexionComponent } from './connexion.component';
+import { ConnexionFormComponent } from './connexion-form.component';
 
-describe('ConnexionComponent', () => {
-  let component: ConnexionComponent;
-  let fixture: ComponentFixture<ConnexionComponent>;
+describe('ConnexionFormComponent', () => {
+  let component: ConnexionFormComponent;
+  let fixture: ComponentFixture<ConnexionFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnexionComponent ]
+      declarations: [ ConnexionFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConnexionComponent);
+    fixture = TestBed.createComponent(ConnexionFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

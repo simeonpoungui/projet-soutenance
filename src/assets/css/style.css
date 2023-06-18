@@ -165,7 +165,7 @@ textarea {
     transition: all 0.5s ease-out 0s;
 }
 .banner-area {
-  background: rgba(0, 0, 0, 0) url("../img/umng/dsc_0944.jpg") no-repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("../img/banner/banner.jpg") no-repeat scroll center center / cover ;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -938,10 +938,10 @@ textarea {
 .header-top::before {
     background: #fff none repeat scroll 0 0;
     content: "";
-    height: 125px;
+    height: 105px;
     position: absolute;
     right: 37.8%;
-    top: -20px;
+    top: -18px;
     transform: rotate(-45deg);
     width: 8px;
     z-index: 1;
@@ -1177,7 +1177,6 @@ textarea {
 }
 .notice-right{
     padding: 40px 50px 50px;
-    height: 576px;
 }
 .notice-left h3, .notice-left-wrapper h3, .notice-right-wrapper h3{
     font-family: 'Open Sans', sans-serif;
@@ -1229,7 +1228,7 @@ textarea {
     color: #EC1C23;
 }
 .notice-video {
-    background: rgba(0, 0, 0, 0) url("../img/umng/amphi-université-marien-ngouabi.jpg") repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../img/notice/video.jpg") repeat scroll 0 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1259,7 +1258,7 @@ textarea {
     overflow-y: auto;
 }
 .notice-left{
-    height: 576px;
+    height: 540px;
     overflow-y: auto;
 }
 /*-----------------------------------------*/
@@ -1385,7 +1384,7 @@ textarea {
     top: 50%;
     content: "";
     opacity: 0;
-    transform: translate(-50% -50%);
+    transform: translate(-50% -50%)
     margin: auto;
     z-index: 1;
     -webkit-transition: all 0.5s ease 0s;

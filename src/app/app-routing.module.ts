@@ -23,12 +23,14 @@ import { TeacherComponent } from './pages/teacher/teacher.component';
 import { ConnecComponent } from './pages/connec/connec.component';
 import { InscrireComponent } from './pages/inscrire/inscrire.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ConnexionFormComponent } from './connexion-form/connexion-form.component';
 
 
 const routes: Routes = [
 
 
   {path: "inscription/list", component: InscriptionEtudiantViewComponent},
+  {path: "inscription/ajout", component: InscriptionEtudiantComponent},
   {path: "inscription/:action/:inscriptionID", component: InscriptionEtudiantComponent},
 
   {path: "paiement/list", component: PaiementViewComponent},
@@ -57,20 +59,17 @@ const routes: Routes = [
   {path: "evenements", component: EvenementComponent},
   {path: "blogs", component: BlogComponent},
   {path: "teachers", component: TeacherComponent},
-  {path: "connexion", component: ConnecComponent},
+  {path: "preinscription", component: ConnecComponent},
   {path: "inscrire", component: InscrireComponent},
   {path: "about", component: AboutComponent},
-  
 
 
-   {path: "tab", component: HomeComponent},
-   {path: "alert", component: AlertComponent},
-   {path: "**", component: PageNoFoundComponent},
 
+  {path: "connexionform", component: ConnexionFormComponent},
+  {path: "tab", component: HomeComponent},
+  {path: "alert", component: AlertComponent},
+  {path: "**", component: PageNoFoundComponent},
 
- 
-
-  
 ];
 
 @NgModule({
