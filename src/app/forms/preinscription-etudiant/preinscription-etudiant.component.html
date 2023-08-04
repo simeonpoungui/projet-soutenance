@@ -91,7 +91,7 @@
                         </li>
                       </ul>
                     </li>
-                   
+
                     <li><a routerLink="/contacts">Contact</a></li>
                     <li>
                       <a routerLink="/blogs">Dashboard</a>
@@ -161,7 +161,9 @@
                 <h2>
                   {{ action === "view" ? "Fiche de l'étudiant" : "" }}
                   {{ action === "edit" ? "Modifier l'étudiant" : "" }}
-                  {{ action === "view" || action === "edit" ? nom_etudiant : "" }}
+                  {{
+                    action === "view" || action === "edit" ? nom_etudiant : ""
+                  }}
                   {{ !action ? "Ajouter un étudiant" : "" }}
                 </h2>
               </h3>
@@ -221,14 +223,18 @@
                       <label for="validationCustom01" class="form-label"
                         >genre</label
                       >
-                      <input
-                        [readonly]="action == 'view'"
+
+                      <select
                         type="text"
-                        class="form-control"
+                        class="form-control form-select"
                         name="genre"
                         [(ngModel)]="genre"
                         required=""
-                      />
+                      >
+                        <option disabled>Selectionner le genre</option>
+                        <option value="1">Homme</option>
+                        <option value="2">Femme</option>
+                      </select>
                     </div>
 
                     <div class="mt-3">
@@ -237,7 +243,7 @@
                       >
                       <input
                         [readonly]="action == 'view'"
-                        type="text"
+                        type="number"
                         class="form-control"
                         name="telephone"
                         [(ngModel)]="telephone"
@@ -255,7 +261,7 @@
                       >
                       <input
                         [readonly]="action == 'view'"
-                        type="text"
+                        type="date"
                         class="form-control"
                         name="date_naissance"
                         [(ngModel)]="date_naissance"
@@ -267,14 +273,22 @@
                       <label for="validationCustom01" class="form-label"
                         >parcours</label
                       >
+
                       <input
-                        [readonly]="action == 'view'"
                         type="text"
                         class="form-control"
                         name="parcours"
                         [(ngModel)]="parcours"
                         required=""
+                        list="datalistOptions"
+                        id="exampleDataList"
+                        placeholder="Saissez ou recherechez votre parcours..."
                       />
+                      <datalist id="datalistOptions">
+                        <option value="Licence"></option>
+                        <option value="Master"></option>
+                        <option value="Doctorat"></option>
+                      </datalist>
                     </div>
 
                     <div class="mt-2">
@@ -287,6 +301,7 @@
                         class="form-control"
                         name="niveau"
                         [(ngModel)]="niveau"
+                        placeholder="EX: Licence 1 Mathématiques"
                         required=""
                       />
                     </div>
@@ -298,7 +313,7 @@
                       >
                       <input
                         [readonly]="action == 'view'"
-                        type="text"
+                        type="email"
                         class="form-control"
                         name="email"
                         [(ngModel)]="email"
@@ -310,14 +325,24 @@
                       <label for="validationCustom01" class="form-label"
                         >etablissement</label
                       >
+
                       <input
-                        [readonly]="action == 'view'"
                         type="text"
                         class="form-control"
                         name="etablissement"
                         [(ngModel)]="etablissement"
                         required=""
+                        list="datalistOptions1"
+                        id="exampleDataList"
+                        placeholder="renseigné votre etablissement..."
                       />
+                      <datalist id="datalistOptions1">
+                        <option
+                          value="Faculté des Sciences et Techniques"
+                        ></option>
+                        <option value="Faculté des Droits"></option>
+                        <option value="Faculté des Sciences Economies"></option>
+                      </datalist>
                     </div>
 
                     <div class="mt-2">
@@ -356,14 +381,28 @@
                       <label for="validationCustom01" class="form-label"
                         >departement</label
                       >
+
+
                       <input
-                        [readonly]="action == 'view'"
-                        type="text"
-                        class="form-control"
-                        name="departement"
-                        [(ngModel)]="departement"
-                        required=""
+                      [readonly]="action == 'view'"
+                      type="text"
+                      class="form-control"
+                      name="departement"
+                      [(ngModel)]="departement"
+                      required=""
+                        list="datalistOptions2"
+                        id="exampleDataList"
+                        placeholder="Saissez ou recherchez votre departement..."
                       />
+                      <datalist id="datalistOptions2">
+                        <option value="Mathematiques"></option>
+                        <option value="Biologie"></option>
+                        <option value="Chimie"></option>
+                        <option value="Geologie"></option>
+                        <option value="Physique"></option>
+                        <option value="Informatiques"></option>
+                      </datalist>
+
                     </div>
 
                     <div class="mt-2">
@@ -385,27 +424,37 @@
                       <label for="validationCustom01" class="form-label"
                         >quittance</label
                       >
-                      <input
-                        [readonly]="action == 'view'"
+
+                      <select
                         type="text"
                         class="form-control"
                         name="quittance"
                         [(ngModel)]="quittance"
                         required=""
-                      />
+                      >
+                        <option value="">10750frs</option>
+                        <option value="">35000frs</option>
+                        <option value="">50000frs</option>
+                      </select>
                     </div>
                     <div class="mt-2">
                       <label for="validationCustom01" class="form-label"
                         >cycle</label
                       >
-                      <input
-                        [readonly]="action == 'view'"
-                        type="text"
+
+                      <select
+                      type="text"
                         class="form-control"
                         name="cycle"
+                        placeholder="renseigner le cycle"
                         [(ngModel)]="cycle"
                         required=""
-                      />
+                    >
+                      <option value="">Licence</option>
+                      <option value="">Masters</option>
+                      <option value="">Doctorats</option>
+                    </select>
+                
                     </div>
 
                     <div class="mt-2">
@@ -428,7 +477,7 @@
                   <div class="col-lg-6">
                     <div class="">
                       <label for="validationCustom01" class="form-label"
-                        >session</label
+                        >session d'obtention du bac</label
                       >
                       <input
                         [readonly]="action == 'view'"
@@ -436,6 +485,7 @@
                         class="form-control"
                         name="session"
                         [(ngModel)]="session"
+                        placeholder="EX: session de juin 2018"
                         required=""
                       />
                     </div>
@@ -457,7 +507,7 @@
                   <div class="col-lg-6">
                     <div class="">
                       <label for="validationCustom01" class="form-label"
-                        >lycee</label
+                        >lycee d'ontention du bac</label
                       >
                       <input
                         [readonly]="action == 'view'"
@@ -465,6 +515,7 @@
                         class="form-control"
                         name="lycee"
                         [(ngModel)]="lycee"
+                        placeholder="EX: La reconciliation"
                         required=""
                       />
                     </div>
@@ -497,11 +548,11 @@
                   />
                 </div>
 
-                <div class="col-12  mt-4" *ngIf="action !== 'view'">
+                <div class="col-12 mt-4" *ngIf="action !== 'view'">
                   <button
                     type="submit"
                     class="btn form-control text-white"
-                    style="background-color: #2c2b5e;"
+                    style="background-color: #2c2b5e"
                   >
                     {{ action === "edit" ? "Modifier" : "Ajouter un étudiant" }}
                   </button>

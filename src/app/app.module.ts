@@ -45,6 +45,7 @@ import { ConnecComponent } from './pages/connec/connec.component';
 import { InscrireComponent } from './pages/inscrire/inscrire.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ConnexionFormComponent } from './connexion-form/connexion-form.component';
+import { AnneeViewComponent } from './dashboard/annee-view/annee-view.component';
 
 
 
@@ -79,6 +80,7 @@ import { ConnexionFormComponent } from './connexion-form/connexion-form.componen
     InscrireComponent,
     AboutComponent,
     ConnexionFormComponent,
+    AnneeViewComponent,
 
 
 

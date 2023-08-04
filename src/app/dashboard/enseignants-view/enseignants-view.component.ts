@@ -207,26 +207,17 @@ export class EnseignantsViewComponent {
     this.dataSource.filter = value.trim().toLowerCase();
   }
 
-  create() {
-    const refview = this.dialog.open(EnseignantComponent, {
-    });
-     refview.componentInstance.action = 'create';
-  }
 
-  edit(Enseignant: Enseignant) {
-    const ref = this.dialog.open(EnseignantComponent, {
-    });
-     ref.componentInstance.action = 'edit';
-     ref.componentInstance.id = Enseignant.id;
+
+  edit(id: string){
+    this.router.navigateByUrl('/enseignant/edit/' + id);
   }
 
 
-  view(Enseignant: Enseignant) {
-    const refview = this.dialog.open(EnseignantComponent, {
-    });
-     refview.componentInstance.action = 'view';
-     refview.componentInstance.id = Enseignant.id;
+  view(id: string){
+    this.router.navigateByUrl('/enseignant/view/' +  id);
   }
+
 
   delete(Enseignant:Enseignant) {
     const ref = this.dialog.open(AlertComponent);

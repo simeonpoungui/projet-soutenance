@@ -34,7 +34,8 @@ export class EnseignantComponent {
   date_de_naissance!:string
 
 
-  @Input() action !: "create" | "edit" | "view"
+  action!: 'edit' | 'view';
+
   dataSource: any;
   isLoading!: boolean;
 
@@ -50,11 +51,16 @@ export class EnseignantComponent {
 
   ngOnInit(): void {
 
-    if (this.id) {
-       this.initForUpdate(this.id)
-    }
-    console.log(this.id);
+    const enseignantID = this.route.snapshot.params['enseignantID'];
+    this.action = this.route.snapshot.params['action'];
+
+    console.log(enseignantID);
     console.log(this.action)
+
+    if (enseignantID) {
+      this.initForUpdate(enseignantID);
+    }
+
   }
 
   initForUpdate(enseignantID: string) {

@@ -242,24 +242,24 @@ export class AgentViewComponent {
      refview.componentInstance.id = agent.id;
   }
 
-  // delete(Enseignant:InscriptionEtudiant) {
-  //   const ref = this.dialog.open(AlertComponent);
-  //   ref.componentInstance.type = 'danger';
-  //   ref.componentInstance.contenu =
-  //     'Voulez vous supprimer cet etudiant ' + Enseignant.prenom_etudiant + ' ?';
-  //   ref.afterClosed().subscribe((result) => {
-  //     if (result) {
-  //       this.EnseignantService.getEtudiantss().pipe(catchError((error:HttpErrorResponse)=>{
-  //         console.log(error.status);
-  //         return []
-  //       })).subscribe((data) => {
-  //         console.log(data);
-  //        location.reload()
-  //       });
-  //     }
-  //   });
-  //   console.log(Enseignant);
-  // }
+   delete(agent:Agent) {
+     const ref = this.dialog.open(AlertComponent);
+     ref.componentInstance.type = 'danger';
+     ref.componentInstance.contenu =
+       'Voulez vous supprimer l\'agent ' + agent.nom_agent + ' ?';
+     ref.afterClosed().subscribe((result) => {
+       if (result) {
+         this.agentService.delete(agent.id).pipe(catchError((error:HttpErrorResponse)=>{
+           console.log(error.status);
+           return []
+         })).subscribe((data) => {
+           console.log(data);
+          location.reload()
+         });
+       }
+     });
+     
+   }
 
 
 

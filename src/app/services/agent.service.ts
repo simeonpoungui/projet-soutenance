@@ -41,7 +41,7 @@ export class AgentService {
     });
   }
 
-  delete(id: number): Observable<any> {
+  delete(id: string): Observable<any> {
     return this.http.post<any>(this.apiUrldelete, {
       method: 'DELETE',
       id: id
